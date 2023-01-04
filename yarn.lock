@@ -8148,6 +8148,13 @@ react-simple-chatbot@^0.6.1:
     react "^16.4.1"
     react-dom "^16.4.1"
 
+react-sweetalert2@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-sweetalert2/-/react-sweetalert2-0.5.2.tgz#83f60963669fd4ab9e193beb7f1c56a1a5934cd7"
+  integrity sha512-6BxyApbQT1prCG5KUBTkc3+64CWpKAJCjd0Bvv+pmwEGYI9QeaDoH/sP8NeM4cMZgEplFsq6B/8noHoF1w/nzA==
+  dependencies:
+    sweetalert2 "^11.3.5"
+
 react@^16.4.1:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
@@ -9123,6 +9130,11 @@ svgo@^2.7.0:
     csso "^4.2.0"
     picocolors "^1.0.0"
     stable "^0.1.8"
+
+sweetalert2@^11.3.5:
+  version "11.6.16"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.6.16.tgz#ed3062b4b06a5dc81bb4fe4f245ff8b9e432b2d8"
+  integrity sha512-T2FO8LptErsjE4r0WMfiSk4YbeUvPadNaUZ/cADMEOnws000znrf8zFX9S5e/spvzJDyRI5En73WQyDZhGypxQ==
 
 symbol-tree@^3.2.4:
   version "3.2.4"
