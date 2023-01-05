@@ -19,14 +19,6 @@ const theme = {
 
 
 function App() {
-  const [correct, setCorrect] = useState({name: "", status: "", newPart: "", oldPart: "", description: ""});
-  const [name, setName] = useState("");
-  const [status, setStatus] = useState("");
-  const [newPart, setNewPart] = useState("");
-  const [oldPart, setOldPart] = useState("");
-  const [description, setDescription] = useState("");
-  const [swalProps, setSwalProps] = useState({});
-
   const [phone, setPhone] = useState({
     "vo": 1,
     "camera": 1,
@@ -50,10 +42,10 @@ function App() {
           {
             id: 1,
             message: "Thiết bị điện tử của bạn đang sử dụng là gì?",
-            trigger: 2
+            trigger: "name"
           },
           {
-            id: 2,
+            id: "name",
             options: [
               { value: "laptop", label: "Laptop", trigger: 3 },
               { value: "phone", label: "Điện thoại", trigger: 3 },
@@ -94,100 +86,20 @@ function App() {
           },
           {
             id: "33",
+            message: "Ngoài những bộ phận được thay mới, khi sử dụng bạn thấy những bộ phận nào không trong tình trạng tốt nhất?",
+            trigger: "oldPart"
+          },
+          {
+            id: "oldPart",
+            user: true,
+            trigger: "34"
+          },
+          {
+            id: "34",
             component: <Review />,
             asMessage: true
           }
           
-          // Laptop
-          // {
-          //   id: 3,
-          //   message: "Bạn có thể mô tả những thông tin cơ bản của thiết bị(Tên, hãng, ...)?",
-          //   trigger: "311"
-          // },
-          // {
-          //   id: "311",
-          //   user: true,
-          //   validator: (value) => {
-          //     setCorrect({
-          //       ...correct,
-          //       name: value
-          //     });
-          //     return true;
-          //   },
-          //   trigger: "31"
-          // },
-          // {
-          //   id: "31",
-          //   message: "Tình trạng laptop của bạn hiện tại đang có vấn đề như thế nào?",
-          //   trigger: "322"
-          // },
-          // {
-          //   id: "322",
-          //   user: true,
-          //   validator: (value) => {
-          //     setCorrect({
-          //       ...correct,
-          //       status: value
-          //     });
-          //     return true;
-          //   },
-          //   trigger: "32"
-          // },
-          // {
-          //   id: "32",
-          //   message: "Bạn muốn thay thế mới những bộ phần nào luôn không?",
-          //   trigger: "333"
-          // },
-          // {
-          //   id: "333",
-          //   user: true,
-          //   validator: (value) => {
-          //     let arrayValue = value.split(', ');
-          //     setNewPart(value);
-          //     return true;
-          //   },
-          //   trigger: "33"
-          // },
-          // {
-          //   id: "33",
-          //   message: "Ngoài những bộ phận được thay thế mới, những bộ phận nào bạn cảm thẩy sử dụng không như bình thường?",
-          //   trigger: "344"
-          // },
-          // {
-          //   id: "344",
-          //   user: true,
-          //   validator: (value) => {
-          //     setCorrect({
-          //       ...correct,
-          //       oldPart: value
-          //     });
-          //     return true;
-          //   },
-          //   trigger: "34"
-          // },
-          // {
-          //   id: "34",
-          //   message: "Bạn hãy mô tả những lỗi mà bạn gặp vừa qua với các bộ phận đang cần sửa chữa!",
-          //   trigger: "355"
-          // },
-          // {
-          //   id: "355",
-          //   user: true,
-          //   validator: (value) => {
-          //     setCorrect({
-          //       ...correct,
-          //       description: value
-          //     });
-          //     return true;
-          //   },
-          //   trigger: "36"
-          // },
-          // {
-          //   id: "36",
-          //   message: ({ previousValue, steps }) => '{previousValue} {steps}'
-          //   // message: `Theo như thông tin bạn đã cung cấp, thì thiết bị của bạn đang hỏng và không sử dụng được nữa đó là {}`
-          // }
-        
         ]}
       />
 
