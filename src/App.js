@@ -37,7 +37,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ChatBot
-        headerTitle="Hệ thống tư vấn đồ điện tử"
+        headerTitle="Hệ thống tư vấn sửa chữa và bảo dưỡng đồ điện tử"
         steps={[
           {
             id: 1,
@@ -76,7 +76,7 @@ function App() {
           },
           {
             id: "32",
-            message: "Bạn muốn thay thế mới những bộ phận nào?",
+            message: "Bạn thấy những bộ phận nào đang không sử dụng được hoặc sử dụng có hiệu suất kém?",
             trigger: "newPart"
           },
           {
@@ -86,7 +86,7 @@ function App() {
           },
           {
             id: "33",
-            message: "Ngoài những bộ phận được thay mới, khi sử dụng bạn thấy những bộ phận nào không trong tình trạng tốt nhất?",
+            message: "Ngoài những bộ phận đó, khi sử dụng bạn thấy những bộ phận nào có hiệu suất không cao?",
             trigger: "oldPart"
           },
           {
@@ -97,7 +97,25 @@ function App() {
           {
             id: "34",
             component: <Review />,
-            asMessage: true
+            asMessage: true,
+            trigger: "35"
+          },
+          {
+            id: "35",
+            message: "Cảm ơn bạn đã lắng nghe thông tin và cách tư vấn, bạn có muộn tiếp tục nghe tư vấn từ bot không?",
+            trigger: "36"
+          },
+          {
+            id: "36",
+            options: [
+              {value: "start", label: "Có", trigger: 1},
+              {value: "end", label: "Không", trigger: "37"}
+            ]
+          },
+          {
+            id: "37",
+            message: "Cảm ơn bạn đã sử dụng chatbot",
+            end: true
           }
           
         ]}
